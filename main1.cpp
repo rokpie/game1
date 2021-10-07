@@ -36,7 +36,7 @@ void Gimtadienis(){
         for (int i = datadiena; i < datadiena+7; i++){
             for (int j = 0; j <100; j++){
                 if ((menesiai[j] == datamenuo) && (dienos[j] == datadiena)){
-                    vardai[j] = isvestiVardai[a];
+                    isvestiVardai[a] = vardai[j];
                     a++;
                 }
 
@@ -48,7 +48,7 @@ void Gimtadienis(){
         for (int i = datadiena; i < menesis[datamenuo]; i++){
             for (int j = 0; j <100; j++){
                 if ((menesiai[j] == datamenuo) && (dienos[j] == datadiena)){
-                    vardai[j] = isvestiVardai[a];
+                    isvestiVardai[a] = vardai[j];
                     a++;
                 }
 
@@ -57,7 +57,7 @@ void Gimtadienis(){
         for (int i = 0; i < datadiena+(7-sk); i++){
             for (int j = 1; j <100; j++){
                 if ((menesiai[j] == 1) && (dienos[j] == datadiena)){
-                    vardai[j] = isvestiVardai[a];
+                    isvestiVardai[a] = vardai[j];
                     a++;
                 }
 
@@ -69,7 +69,7 @@ void Gimtadienis(){
         for (int i = datadiena; i < menesis[datamenuo]; i++){
             for (int j = 0; j <100; j++){
                 if ((menesiai[j] == datamenuo) && (dienos[j] == datadiena)){
-                    vardai[j] = isvestiVardai[a];
+                    isvestiVardai[a] = vardai[j];
                     a++;
                 }
 
@@ -78,7 +78,7 @@ void Gimtadienis(){
         for (int i = 0; i < datadiena+(7-sk); i++){
             for (int j = 1; j <100; j++){
                 if ((menesiai[j] == (datamenuo+1)) && (dienos[j] == datadiena)){
-                    vardai[j] = isvestiVardai[a];
+                    isvestiVardai[a] = vardai[j];
                     a++;
                 }
 
