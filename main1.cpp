@@ -29,9 +29,9 @@ void Gimtadienis(){
     cout << "menesi: ";
     cin >> datamenuo;
     cout << "diena: ";
-    cin >> datadiena;
-    if (!ArKeliamieji(datametai)){menesis[1] = 28;}
-    if (datadiena <= menesis[datamenuo-1] - 7){
+    cin >> datadiena; // 25
+    if (!ArKeliamieji(datametai)){menesis[1] = 28;} /// taip
+    if (datadiena <= menesis[datamenuo-1] - 7){ // 25<= 23
         for (int i = datadiena; i < datadiena+7; i++){
             for (int j = 0; j <100; j++){
                 if ((menesiai[j] == datamenuo) && (dienos[j] == i)){
@@ -43,7 +43,7 @@ void Gimtadienis(){
             }
         }
     }
-    else if (datamenuo == 12){
+    else if (datamenuo == 12){ // 6 žž 12
         int sk = menesis[11] - datadiena;
         for (int i = datadiena; i < menesis[datamenuo-1]; i++){
             cout << "bent jau tikrina" << i<< endl;
@@ -69,10 +69,11 @@ void Gimtadienis(){
         }
     }
     else{
-        int sk = menesis[datamenuo-1] - datadiena;
+        int sk = 7-(menesis[datamenuo-1] - datadiena); // sk ž 7-(30-25)
         for (int i = datadiena; i < menesis[datamenuo-1]; i++){
             cout << "bent jau tikrina" << i<< endl;
             for (int j = 0; j <100; j++){
+				cout << "bent jau tikrina" << i << " " << menesiai[j] << "žž" << datamenuo << "; " << dienos[j] << "žž"<< i << "; "<< vardai[j] <<endl;
                 if ((menesiai[j] == datamenuo) && (dienos[j] == i)){
                     isvestiVardai[a] = vardai[j];
                     cout << "veikia iki cia"<< i << isvestiVardai[a];
@@ -81,8 +82,8 @@ void Gimtadienis(){
 
             }
         }
-        for (int i = 0; i < datadiena+(7-sk); i++){
-            for (int j = 1; j <100; j++){
+        for (int i = 0; i < sk; i++){
+            for (int j = a; j <100; j++){
                 if ((menesiai[j] == (datamenuo+1)) && (dienos[j] == i)){
                     isvestiVardai[a] = vardai[j];
                     cout << "veikia iki cia"<< i << isvestiVardai[a];
@@ -130,4 +131,3 @@ int main()
         }}
     return 0;
 }
-
