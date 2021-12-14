@@ -1,40 +1,39 @@
 #include <iostream>
-#include <math.h>
-#include "graphics.h"
+#include <fstream>
 
 using namespace std;
 
-int sveikasskaicius = 8; ///Cia sveikas skaicius
-
-const int WIDTH = 800, HEIGHT = 800;
-void drawLine ( int moveToX, int moveToY, int drawX, int drawY, color, textX, textY, char *name){
-
-}
-
-void funkcija(){
-    /// Èia yra funkcija
-}
-
-double polinomas(double x){
-    double rezultatas = 2*x*x +10*x+15;
-    return rezultatas;
-}
-
 int main()
 {
-/*
-    cout << "Hello world!" << endl;
-    //funkcijapointmain();
+    ifstream fin ("info.txt");
 
-    for (double x = -10; x <= 10; x+=0.1){
-            cout << x << " -> " << polinomas(x)<< endl;
+    int n, v, t, k, m;
+    fin >> n >> m;
+    int kur[n] = {0};
+    int uz[2] = {10000,0};
+    int laisve[n] = {0};
+    for (int i = 0; i <n;i++){
+        fin >> t >> v; // gavimo laikas, verte
+        for(int j = 0; j < n; j++ ){
+            fin >> k; // kurejriu laikas
+            cout  << laisve[j]<< " "<< t << " " << k <<" "<< uz[0] << " " << j<< endl;
+            if (laisve[j] < t){ // ar laisvas
+                if (k < uz[0]){ // laikas < praeita maziausia laika
+                    uz[0] = k;  // naujas maziausias laikas
+                    uz[1] = j;  // kuris kurjeris
+                }
+            }
+            cout << uz[1] << endl;
+        }
+        if (uz[0] != 10000){
+            laisve[uz[1]] += uz[0];
+            kur[uz[1]] += v;
+            uz[0] = 10000;
+            uz[1] = 0;
+        }
     }
-    */
-return 0;
+    for (int i = 0; i <n;i++){
+            cout << kur[i]<< " ";
+    }
+    return 0;
 }
-
-/*
-void funkcijapointmain (){ /// cia yra funkcija po int main
-    cout << publicsveikasskaicius;
-}
-*/
